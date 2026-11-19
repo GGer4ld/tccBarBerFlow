@@ -1,0 +1,299 @@
+/* ==================================================
+   BARBERFLOW - SIDEBAR
+================================================== */
+
+.sidebar{
+
+    width:var(--sidebar-width);
+
+    height:100vh;
+
+    position:fixed;
+
+    left:0;
+    top:0;
+
+    display:flex;
+    flex-direction:column;
+
+    background:#ffffff;
+
+    border-right:1px solid var(--border);
+
+    z-index:1000;
+
+}
+
+
+/* LOGO */
+
+.sidebar-logo{
+
+    height:90px;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 24px;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.logo-icon{
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:12px;
+
+    font-size:18px;
+
+    margin-right:12px;
+
+}
+
+.logo-text{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.logo-text strong{
+
+    font-size:18px;
+
+    color:var(--text);
+
+}
+
+.logo-text span{
+
+    font-size:10px;
+
+    color:var(--text-light);
+
+}
+
+
+/* MENU */
+
+.sidebar-menu{
+
+    flex:1;
+
+    padding:25px 15px;
+
+    overflow-y:auto;
+
+}
+
+.menu-title{
+
+    font-size:10px;
+
+    font-weight:600;
+
+    color:#94A3B8;
+
+    letter-spacing:.8px;
+
+    padding:0 12px;
+
+    margin:20px 0 10px;
+
+}
+
+.menu-title:first-child{
+
+    margin-top:0;
+
+}
+
+
+.menu-item{
+
+    height:46px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    padding:0 14px;
+
+    margin-bottom:5px;
+
+    border-radius:10px;
+
+    color:#64748B;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    transition:.2s;
+
+}
+
+.menu-item i{
+
+    width:20px;
+
+    text-align:center;
+
+    font-size:15px;
+
+}
+
+.menu-item:hover{
+
+    background:#EFF6FF;
+
+    color:var(--primary);
+
+}
+
+.menu-item.active{
+
+    background:#EFF6FF;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+
+/* RODAPÉ */
+
+.sidebar-footer{
+
+    padding:15px;
+
+    border-top:1px solid var(--border);
+
+}
+
+.logout-item{
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    padding:0 14px;
+
+    border-radius:10px;
+
+    color:#64748B;
+
+    font-size:14px;
+
+    transition:.2s;
+
+}
+
+.logout-item:hover{
+
+    background:#FEF2F2;
+
+    color:var(--danger);
+
+}
+
+/* ==========================================================
+   SIDEBAR RECOLHÍVEL
+   ========================================================== */
+
+.sidebar {
+    transition:
+        width 0.25s ease,
+        transform 0.25s ease;
+}
+
+.main {
+    transition:
+        margin-left 0.25s ease,
+        width 0.25s ease;
+}
+
+
+/* ==========================================================
+   SIDEBAR RECOLHIDA
+   ========================================================== */
+
+body.sidebar-collapsed .sidebar {
+    width: 78px;
+}
+
+
+/* Esconde textos */
+
+body.sidebar-collapsed .sidebar .logo-text,
+body.sidebar-collapsed .sidebar .menu-title,
+body.sidebar-collapsed .sidebar .menu-item span,
+body.sidebar-collapsed .sidebar .logout-item span {
+    display: none;
+}
+
+
+/* Centraliza os itens */
+
+body.sidebar-collapsed .sidebar .sidebar-logo {
+    justify-content: center;
+}
+
+body.sidebar-collapsed .sidebar .menu-item,
+body.sidebar-collapsed .sidebar .logout-item {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/* Mantém os ícones centralizados */
+
+body.sidebar-collapsed .sidebar .menu-item i,
+body.sidebar-collapsed .sidebar .logout-item i {
+    margin: 0;
+}
+
+
+/* ==========================================================
+   DESKTOP
+   ========================================================== */
+
+@media (min-width: 769px) {
+
+    body.sidebar-collapsed .main {
+        margin-left: 78px;
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    body.sidebar-collapsed .sidebar {
+        transform: translateX(-100%);
+    }
+
+}  

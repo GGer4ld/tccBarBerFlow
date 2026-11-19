@@ -1,0 +1,416 @@
+/* ==================================================
+   BARBERFLOW - DASHBOARD
+================================================== */
+
+.content{
+
+    padding:30px;
+
+}
+
+
+/* CABEÇALHO */
+
+.dashboard-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:28px;
+
+}
+
+.dashboard-header h1{
+
+    font-size:28px;
+
+    font-weight:600;
+
+    color:var(--text);
+
+    margin-bottom:5px;
+
+}
+
+.dashboard-header p{
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+.dashboard-header strong{
+
+    color:var(--text);
+
+}
+
+
+/* ÁREA TEMPORÁRIA */
+
+.dashboard-placeholder{
+
+    min-height:300px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:40px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+.dashboard-placeholder i{
+
+    font-size:42px;
+
+    color:var(--primary);
+
+    margin-bottom:18px;
+
+}
+
+.dashboard-placeholder h2{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+.dashboard-placeholder p{
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+.quick-actions{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:35px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.quick-actions .btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+/* =========================================================
+   DASHBOARD - ORGANIZAÇÃO DOS CARDS
+========================================================= */
+
+.cards-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================================================
+   CARD INDIVIDUAL
+========================================================= */
+
+.dashboard-card {
+
+    min-height: 120px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 22px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+/* Pequeno efeito ao passar o mouse */
+
+.dashboard-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 24px rgba(15, 23, 42, 0.08);
+
+}
+
+
+/* =========================================================
+   ÍCONE
+========================================================= */
+
+.dashboard-card .dashboard-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    min-width: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 20px;
+
+}
+
+
+/* =========================================================
+   CONTEÚDO DO CARD
+========================================================= */
+
+.dashboard-card span {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: var(--text-light);
+
+}
+
+
+.dashboard-card h2 {
+
+    margin: 0;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: var(--text);
+
+    line-height: 1.2;
+
+}
+
+
+/* =========================================================
+   CORES DOS ÍCONES
+========================================================= */
+
+.dashboard-icon.blue {
+
+    background: #dbeafe;
+
+    color: #2563eb;
+
+}
+
+
+.dashboard-icon.purple {
+
+    background: #ede9fe;
+
+    color: #7c3aed;
+
+}
+
+
+.dashboard-icon.orange {
+
+    background: #ffedd5;
+
+    color: #ea580c;
+
+}
+
+
+.dashboard-icon.green {
+
+    background: #dcfce7;
+
+    color: #16a34a;
+
+}
+
+
+.dashboard-icon.red {
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+/* =========================================================
+   TELAS MÉDIAS / NOTEBOOK
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .cards-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .content {
+
+        padding: 24px;
+
+    }
+
+
+    .dashboard-card {
+
+        min-height: 110px;
+
+        padding: 20px;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .content {
+
+        padding: 18px;
+
+    }
+
+
+    .cards-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+    }
+
+
+    .dashboard-card {
+
+        min-height: 100px;
+
+        padding: 18px;
+
+    }
+
+
+    .dashboard-card .dashboard-icon {
+
+        width: 48px;
+
+        height: 48px;
+
+        min-width: 48px;
+
+        font-size: 18px;
+
+    }
+
+
+    .dashboard-card h2 {
+
+        font-size: 22px;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .dashboard-card {
+
+        gap: 14px;
+
+    }
+
+
+    .dashboard-card h2 {
+
+        font-size: 20px;
+
+    }
+
+
+    .dashboard-card span {
+
+        font-size: 13px;
+
+    }
+
+}

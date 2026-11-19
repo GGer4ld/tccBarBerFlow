@@ -1,0 +1,346 @@
+.login-page {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    padding: 20px;
+
+    background: #eef3fb;
+
+}
+
+
+/* ==================================================
+   CONTAINER DO LOGIN
+   ================================================== */
+
+.login-container {
+
+    width: 100%;
+    max-width: 1000px;
+
+    min-height: 450px;
+    max-height: calc(100vh - 40px);
+
+    display: flex;
+
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .12);
+
+}
+
+
+/* ==================================================
+   LADO ESQUERDO
+   ================================================== */
+
+.login-left {
+
+    width: 45%;
+
+    background: linear-gradient(135deg, #2563EB, #1D4ED8);
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    padding: 40px;
+
+}
+
+.login-left h1 {
+
+    font-size: 42px;
+
+    margin-bottom: 16px;
+
+}
+
+.login-left p {
+
+    font-size: 16px;
+
+    text-align: center;
+
+    line-height: 1.6;
+
+}
+
+
+/* ==================================================
+   LADO DIREITO
+   ================================================== */
+
+.login-right {
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+}
+
+
+/* ==================================================
+   FORMULÁRIO
+   ================================================== */
+
+.login-card {
+
+    width: 100%;
+    max-width: 380px;
+
+}
+
+.login-card h2 {
+
+    margin-bottom: 30px;
+
+    font-size: 30px;
+
+}
+
+.input-group {
+
+    margin-bottom: 20px;
+
+}
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 500;
+
+}
+
+.input-group input {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #dbe3ec;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+}
+
+.login-card button {
+
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 14px;
+
+    background: #2563EB;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+.login-card button:hover {
+
+    background: #1D4ED8;
+
+}
+
+
+/* ==================================================
+   MENSAGEM DE ERRO
+   ================================================== */
+
+.erro-login {
+
+    background: #FEE2E2;
+
+    color: #B91C1C;
+
+    border: 1px solid #FCA5A5;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+
+}
+
+
+/* ==================================================
+   ESQUECI A SENHA
+   ================================================== */
+
+.esqueci-senha {
+
+    text-align: center;
+
+    margin-top: 15px;
+
+}
+
+.esqueci-senha a {
+
+    color: #2563eb;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: 0.2s;
+
+}
+
+.esqueci-senha a:hover {
+
+    text-decoration: underline;
+
+}
+
+.esqueci-senha i {
+
+    margin-right: 5px;
+
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    .login-page {
+
+        padding: 15px;
+
+        align-items: flex-start;
+
+    }
+
+    .login-container {
+
+        flex-direction: column;
+
+        max-height: none;
+
+        min-height: auto;
+
+        margin: 15px 0;
+
+    }
+
+    .login-left {
+
+        width: 100%;
+
+        padding: 30px 20px;
+
+    }
+
+    .login-left h1 {
+
+        font-size: 34px;
+
+        margin-bottom: 10px;
+
+    }
+
+    .login-left p {
+
+        font-size: 14px;
+
+    }
+
+    .login-right {
+
+        padding: 30px 20px;
+
+    }
+
+    .login-card h2 {
+
+        font-size: 26px;
+
+        margin-bottom: 25px;
+
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .login-page {
+
+        padding: 10px;
+
+    }
+
+    .login-container {
+
+        border-radius: 14px;
+
+        margin: 10px 0;
+
+    }
+
+    .login-left {
+
+        padding: 25px 15px;
+
+    }
+
+    .login-left h1 {
+
+        font-size: 28px;
+
+    }
+
+    .login-right {
+
+        padding: 25px 15px;
+
+    }
+
+    .login-card h2 {
+
+        font-size: 24px;
+
+    }
+
+}

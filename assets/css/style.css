@@ -1,0 +1,356 @@
+/* ==================================================
+   BarberFlow
+   Estilos Globais
+   ================================================== */
+
+@import url("variables.css");
+
+
+/* ==================================================
+   RESET
+   ================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: 'Poppins', sans-serif;
+
+    background: #f5f7fb;
+
+    color: var(--text);
+
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+input {
+    outline: none;
+}
+
+
+/* ==================================================
+   LAYOUT PRINCIPAL
+   ================================================== */
+
+.app {
+    display: flex;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Área principal
+|--------------------------------------------------------------------------
+|
+| O sidebar ocupa --sidebar-width.
+| O .main ocupa automaticamente todo o espaço restante.
+|
+*/
+
+.main {
+    display: flex;
+    flex-direction: column;
+
+    width: calc(100% - var(--sidebar-width));
+    min-width: 0;
+    min-height: 100vh;
+
+    margin-left: var(--sidebar-width);
+
+    flex: 1 1 auto;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Conteúdo
+|--------------------------------------------------------------------------
+*/
+
+.content {
+    width: 100%;
+    min-width: 0;
+
+    padding: 30px;
+
+    flex: 1 1 auto;
+}
+
+
+/* ==================================================
+   FILTROS DE STATUS
+   ================================================== */
+
+.status-filters {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.status-filter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 16px;
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    background: #fff;
+
+    color: #555;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: all 0.2s ease;
+}
+
+.status-filter:hover {
+    border-color: #222;
+    color: #222;
+}
+
+.status-filter.active {
+    background: #222;
+
+    border-color: #222;
+
+    color: #fff;
+}
+
+
+/* ==================================================
+   DASHBOARD - ESTOQUE
+   ================================================== */
+
+.dashboard-card {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px;
+}
+
+.dashboard-card span {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.dashboard-card h2 {
+    margin-top: 8px;
+
+    font-size: 28px;
+}
+
+
+/* ==================================================
+   ÍCONES DO DASHBOARD
+   ================================================== */
+
+.dashboard-icon {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-size: 24px;
+}
+
+.dashboard-icon.blue {
+    background: #dbeafe;
+
+    color: #2563eb;
+}
+
+.dashboard-icon.orange {
+    background: #ffedd5;
+
+    color: #ea580c;
+}
+
+.dashboard-icon.green {
+    background: #dcfce7;
+
+    color: #16a34a;
+}
+
+.dashboard-icon.purple {
+    background: #f3e8ff;
+
+    color: #9333ea;
+}
+
+
+/* ==================================================
+   DASHBOARD - SEÇÕES
+   ================================================== */
+
+.dashboard-section {
+    margin-top: 30px;
+}
+
+.dashboard-section .card {
+    padding: 25px;
+}
+
+
+/* ==================================================
+   CABEÇALHO DOS CARDS
+   ================================================== */
+
+.card-header {
+    margin-bottom: 20px;
+}
+
+.card-header h2 {
+    margin-bottom: 5px;
+}
+
+.card-header span {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   BADGES
+   ================================================== */
+
+.badge {
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-danger {
+    background: #fee2e2;
+
+    color: #dc2626;
+}
+
+.badge-success {
+    background: #dcfce7;
+
+    color: #16a34a;
+}
+
+
+/* ==================================================
+   GRÁFICOS
+   ================================================== */
+
+canvas {
+    max-width: 100%;
+    max-height: 300px;
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE
+   ================================================== */
+
+
+/*
+|--------------------------------------------------------------------------
+| Tablet
+|--------------------------------------------------------------------------
+*/
+
+@media (max-width: 1024px) {
+
+    .content {
+        padding: 25px;
+    }
+
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Celular
+|--------------------------------------------------------------------------
+*/
+
+@media (max-width: 768px) {
+
+    /*
+    | No celular o sidebar normalmente passa a ser
+    | controlado pelo CSS/JS do próprio menu.
+    |
+    | O .main deixa de reservar o espaço lateral.
+    */
+
+    .main {
+        width: 100%;
+        min-width: 0;
+
+        margin-left: 0;
+    }
+
+    .content {
+        width: 100%;
+        min-width: 0;
+
+        padding: 20px 16px;
+    }
+
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Celulares pequenos
+|--------------------------------------------------------------------------
+*/
+
+@media (max-width: 480px) {
+
+    .content {
+        padding: 16px 12px;
+    }
+
+}
